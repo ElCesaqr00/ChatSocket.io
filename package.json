@@ -3,9 +3,6 @@
     "version": "0.0.1",
     "description": "my first socket.io app",
     "type": "module",
-    "scripts": {
-        "start": "node server.js"
-    },
     "dependencies": {
         "Chat": "file:",
         "express": "^4.21.1",
