@@ -64,7 +64,10 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      const socket = io("http://192.168.1.119:3000");
+      const socket = io({
+        transports: ["websocket", "polling"],
+        secure: true,
+      });
 
       const form = document.getElementById("form");
       const input = document.getElementById("input");

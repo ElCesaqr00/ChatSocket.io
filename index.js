@@ -3,12 +3,11 @@ import { createServer } from "node:http";
 import { fileURLToPath} from "node:url";
 import { dirname, join } from "node:path";
 import { Server } from "socket.io"
-const PORT = process.env.PORT || 3000;
 
-    const  app = express();
+const  app = express();
     const server = createServer(app);
     const io = new Server(server)
-
+    
     const _dirname = dirname(fileURLToPath(import.meta.url));
 
     app.get("/",(req, res) => {
@@ -27,8 +26,9 @@ const PORT = process.env.PORT || 3000;
           io.emit('chat message', msg);
         });
       });
-
-
+      
+      const PORT = process.env.PORT || 3000;
+console.log(PORT)
     server.listen(PORT, () =>{
         console.log(`corriendo en enlace http://localhost:${PORT}`)
     });
