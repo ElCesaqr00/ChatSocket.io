@@ -1,8 +1,9 @@
-    import express from "express";
-    import { createServer } from "node:http";
-    import { fileURLToPath} from "node:url";
-    import { dirname, join } from "node:path";
-    import { Server } from "socket.io"
+import express from "express";
+import { createServer } from "node:http";
+import { fileURLToPath} from "node:url";
+import { dirname, join } from "node:path";
+import { Server } from "socket.io"
+const PORT = process.env.PORT || 3000;
 
     const  app = express();
     const server = createServer(app);
@@ -28,7 +29,6 @@
       });
 
 
-    const PORT = process.env.PORT || 3000
-    server.listen(PORT, "192.168.1.119", () =>{
+    server.listen(PORT, () =>{
         console.log(`corriendo en enlace http://localhost:${PORT}`)
     });
