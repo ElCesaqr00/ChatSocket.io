@@ -27,6 +27,8 @@
         });
       });
 
-    server.listen(3000, "192.168.1.119", () =>{
-        console.log("corriendo en enlace http://localhost:3000")
+
+    const PORT = process.env.PORT || 3000
+    server.listen(PORT, "192.168.1.119", () =>{
+        console.log(`corriendo en enlace http://localhost:${PORT}`)
     });
